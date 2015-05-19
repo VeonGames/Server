@@ -1,0 +1,25 @@
+O = nothing
+X = normal attack
+> = go right
+< = go left
+^ = go up
+/ = go down
+
+go operations:
+a go operation will go on a strait path until it hits another character.
+this will change the go operation's direction or stop it. NOTE: we can if we
+want to, implement a as it goes further from the original go operation it 
+changes damage but that can be done later easily. 
+
+
+O O O O O O O O O 
+O O O O O O / < O 
+O O O O O O O O O 
+O O O O O x O O O 
+O O O O P > O ^ O 
+O O O O O x O O O 
+O O O O O O X O O 
+O O O O O O O O O 
+O O O O O O O O O
+
+
