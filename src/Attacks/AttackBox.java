@@ -71,6 +71,11 @@ public class AttackBox
         //5 left down 
         //6 left
         //7 left up
+        
+//        7 0 1
+//        6   2
+//        5 4 3
+        
         iterations++;
         
         if (direction == 0)
@@ -111,8 +116,8 @@ public class AttackBox
             yPos -= speed;
         }
         
-        
-        return !(iterations < maxIterations);
+        //returns true if done
+        return !(iterations > maxIterations);
     }
     
     public int getIterationsLeft()

@@ -1,76 +1,78 @@
 package Items.Weapon;
 
-
+import Attacks.AttackBox;
 
 public class Knife extends Weapon
 {
 
-private int amountInStack = 1; 
-private int x = -1;
-private int y = -1;
-private int attackURL = 0;
+    private int amountInStack = 1;
+    private int x = -1;
+    private int y = -1;
 
+    public Knife()
+    {
+        super();
 
-public Knife()
-{
-    super();
-}
-public String name()
-{
-return "Knife";
-}
+    }
 
-public int amount()
-{
-return amountInStack;
-}
+    public String name()
+    {
+        return "Knife";
+    }
 
-public int amountAvailable()
-{
-return 59;
-}
+    public int amount()
+    {
+        return amountInStack;
+    }
 
-public void add()
-{
-amountInStack++;
-}
+    public int amountAvailable()
+    {
+        return 59;
+    }
 
-public int range()
-{
-return 1;
-}
+    public void add()
+    {
+        amountInStack++;
+    }
 
-public int damage()
-{
-return 10;
-}
+    public int range()
+    {
+        return 1;
+    }
 
-public int getX()
-{
-return this.x;
-}
-public int getY()
-{
-return this.y;
-}
+    public int damage()
+    {
+        return 10;
+    }
 
-public void setX(int x)
-{
-this.x = x;
-}
-public void setY(int y)
-{
-this.y = y;
-}
+    public int getX()
+    {
+        return this.x;
+    }
 
-public int value()
-{
-return 1;
-}
+    public int getY()
+    {
+        return this.y;
+    }
 
-public void add(int num)
-{
-amountInStack += num;
-}
+    public void setX(int x)
+    {
+        this.x = x;
+    }
+
+    public void setY(int y)
+    {
+        this.y = y;
+    }
+
+    public int value()
+    {
+        return 1;
+    }
+
+    public void add(int num)
+    {
+        amountInStack += num;
+    }
 
 }

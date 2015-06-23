@@ -41,11 +41,15 @@ public class AIcontroller extends Thread
             
             
             //attakcs
-            for (AttackBox b : boxes)
+            for (int k = 0; k < boxes.size(); k++)
             {
-                checkHit(b);
-                b.move();
+                checkHit(boxes.get(k));
+                if (boxes.get(k).move())
+                {
+                    boxes.remove(k);
+                }
             }
+            //monsters
             for (int i = 0; i < monsters.size(); i++)
             {
                 bill = (Monster) monsters.get(i);

@@ -14,6 +14,7 @@ import Items.Weapon.*;
 
 public class Player {
 
+    
     private int xPos;
     private int yPos;
     private boolean[] attack = new boolean[4];
@@ -29,13 +30,14 @@ public class Player {
     private int oX, oY;
     private int strength;
     private boolean leveled;
+    private Weapon arms;
     private int[] technique = {1,1,1,1,1,1,1};
-    
     private Weapon current = new Knife();
     
     
     public Player(int x, int y)
     {
+        arms = new Knife();
         level = 1;
         health = 100;
         oX = x;
@@ -212,6 +214,12 @@ public class Player {
     public int getTeam()
     {
         return team;
+    }
+    
+    public void attack(int type)
+    {
+        
+        
     }
     
 }

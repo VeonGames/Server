@@ -89,6 +89,7 @@ public class Attack
         //6 left
         //7 left up
         //y,x
+        
         if (dia == null && !(dir == 0 || dir == 1 || dir == 2 || dir == 3))
         {
             return null;
@@ -117,10 +118,10 @@ public class Attack
                     {
                         box.add(new AttackBox(px + ((cx - 4) * 50), py - ((cy - 4) * 50), player.getDamage(), player.getTeam(), dir, 4, 0));
                     }
-                    else if (map[cy][cx] == '>')
-                    {
-                        box.add(new AttackBox(px + ((cx - 4) * 50), py - ((cy - 4) * 50), player.getDamage(), player.getTeam(), dir, next(cx, cy, dir), 3));
-                    }
+//                    else if (map[cy][cx] == '>')
+//                    {
+//                        box.add(new AttackBox(px + ((cx - 4) * 50), py - ((cy - 4) * 50), player.getDamage(), player.getTeam(), dir, next(cx, cy, dir), 3));
+//                    }
                 }
             }
         }

@@ -4,6 +4,7 @@
  */
 package Items.Weapon;
 
+import Attacks.AttackBox;
 import Item.Item;
 import Item.Rune;
 
@@ -13,28 +14,26 @@ import Item.Rune;
  */
 public class Weapon extends Item
 {
+
     protected int damage;
-    protected int typeAttack;
     protected int minLevel;
     protected Rune[] runes;
-  
-    
+    private AttackBox attack;
+
     public Weapon()
     {
         super(1);
         damage = 10;
-        typeAttack = 0;
         minLevel = 1;
         name = "Weapon";
         runes = new Rune[1];
-        
     }
 
     public int getLevel()
     {
         return minLevel;
     }
-    
+
     public int getDamage()
     {
         int sum = 0;
@@ -45,11 +44,11 @@ public class Weapon extends Item
         return damage;
     }
 
-    public int getTypeAttack()
+    public AttackBox getAttack()
     {
-        return typeAttack;
+        return attack;
     }
-    
+
     public boolean addRune(Rune r)
     {
         for (Rune rune : runes)
@@ -62,5 +61,5 @@ public class Weapon extends Item
         }
         return false;
     }
-    
+
 }

@@ -86,55 +86,60 @@ public class ServerConnector
                 }
                 int AttackType = readInt(inpt);
                 int temp = readInt(inpt);
+                thePlayer.setAttack(0, readBoolean(inpt));
+                thePlayer.setAttack(2, readBoolean(inpt));
+                thePlayer.setAttack(3, readBoolean(inpt));
+                thePlayer.setAttack(1, readBoolean(inpt));
+                thePlayer.attack(temp);
                 
-                if (temp==8)
-                {
-                    thePlayer.setAttack(0, false);
-                    thePlayer.setAttack(1, false);
-                    thePlayer.setAttack(2, false);
-                    thePlayer.setAttack(3, false);
-                }
-                else
-                {
-                    if (temp==0)
-                    {
-                        thePlayer.setAttack(0,true);
-                    }
-                    else if (temp==1)
-                    {
-                        thePlayer.setAttack(0,true);
-                        thePlayer.setAttack(1,true);
-                    }
-                    else if (temp==2)
-                    {
-                        thePlayer.setAttack(1, true);
-                    }
-                    else if (temp==3)
-                    {
-                        thePlayer.setAttack(1, true);
-                        thePlayer.setAttack(2, true);
-                    }
-                    else if (temp==4)
-                    {
-                        thePlayer.setAttack(2, true);
-                    }
-                    else if (temp==5)
-                    {
-                        thePlayer.setAttack(2, true);
-                        thePlayer.setAttack(3,true);
-                    }
-                    else if (temp==6)
-                    {
-                        thePlayer.setAttack(3,true);
-                    }
-                    else if (temp==7)
-                    {
-                        thePlayer.setAttack(3,true);
-                        thePlayer.setAttack(0, true);
-                    }
-                    thePlayer.setAttackingNow(true);
-                }
-                
+//                if (temp==8)
+//                {
+//                    thePlayer.setAttack(0, false);
+//                    thePlayer.setAttack(1, false);
+//                    thePlayer.setAttack(2, false);
+//                    thePlayer.setAttack(3, false);
+//                }
+//                else
+//                {
+//                    if (temp==0)
+//                    {
+//                        thePlayer.setAttack(0,true);
+//                    }
+//                    else if (temp==1)
+//                    {
+//                        thePlayer.setAttack(0,true);
+//                        thePlayer.setAttack(1,true);
+//                    }
+//                    else if (temp==2)
+//                    {
+//                        thePlayer.setAttack(1, true);
+//                    }
+//                    else if (temp==3)
+//                    {
+//                        thePlayer.setAttack(1, true);
+//                        thePlayer.setAttack(2, true);
+//                    }
+//                    else if (temp==4)
+//                    {
+//                        thePlayer.setAttack(2, true);
+//                    }
+//                    else if (temp==5)
+//                    {
+//                        thePlayer.setAttack(2, true);
+//                        thePlayer.setAttack(3,true);
+//                    }
+//                    else if (temp==6)
+//                    {
+//                        thePlayer.setAttack(3,true);
+//                    }
+//                    else if (temp==7)
+//                    {
+//                        thePlayer.setAttack(3,true);
+//                        thePlayer.setAttack(0, true);
+//                    }
+//                    thePlayer.setAttackingNow(true);
+//                }
+//                
 
                 playersRemoved = removedList.size();
                 writeInt(playersRemoved, otpt);
