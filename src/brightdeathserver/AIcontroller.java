@@ -75,10 +75,11 @@ public class AIcontroller extends Thread
         }
     }
     
-     public static void checkHit(AttackBox b)
+     public static boolean checkHit(AttackBox b)
      {
         int x = b.getXPos();
         int y = b.getYPos();
+        boolean splashHit=false;
         
         for (Monster bill : monsters)
         {
@@ -87,11 +88,14 @@ public class AIcontroller extends Thread
                 bill.getHit(b.damage());
                 if (!b.isSplash())
                 {
-                    return;
+                    return true;
                 }
+                else
+                    splashHit=true;
             }
         }
-        
+       
+        return splashHit;
     }
     
     public static void moveMonster(int monsterNumber)
