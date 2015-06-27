@@ -1767,7 +1767,12 @@ public class MakeAttack extends javax.swing.JFrame
         s += this.jS80.getText();
         s += this.jS81.getText();
         
-        File f = new File("C:\\Users\\nicno90\\Documents\\NetBeansProjects\\Server\\src\\Attacks\\" + this.jTextField1.getText() + ".txt");
+        String name = this.jTextField1.getText();
+        if (ctr != 1)
+        {
+            name += "D";
+        }
+        File f = new File("C:\\Users\\nicno90\\Documents\\NetBeansProjects\\Server\\src\\Attacks\\" + name + ".txt");
         PrintWriter writer = null;
         try
         {

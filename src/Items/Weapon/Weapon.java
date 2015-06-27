@@ -7,6 +7,9 @@ package Items.Weapon;
 import Attacks.AttackBox;
 import Item.Item;
 import Items.Rune.Rune;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 
 /**
  *
@@ -20,6 +23,8 @@ public class Weapon extends Item
     protected Rune[] runes;
     protected int timeX;
     protected int damageX;
+    protected int type;
+    protected File file;
 
     public Weapon()
     {
@@ -29,6 +34,7 @@ public class Weapon extends Item
         minLevel = 1;
         name = "Weapon";
         runes = new Rune[1];
+        type = 0;
     }
 
     public int getLevel()
@@ -65,4 +71,13 @@ public class Weapon extends Item
         return timeX;
     }
     
+    public int getType()
+    {
+        return type;
+    }
+    
+    public File getFile()
+    {
+        return file;
+    }
 }

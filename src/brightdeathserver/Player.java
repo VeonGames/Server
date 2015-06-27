@@ -4,7 +4,9 @@
  */
 package brightdeathserver;
 
+import Attacks.Attack;
 import Items.Weapon.*;
+import java.io.File;
 
 
 /**
@@ -17,7 +19,7 @@ public class Player {
     
     private int xPos;
     private int yPos;
-    private boolean[] attack = new boolean[4];
+    private int dir;
     private boolean attackingNow = false;
     private int attackType;
     private int team;
@@ -32,8 +34,7 @@ public class Player {
     private boolean leveled;
     private Weapon arms;
     private int[] technique = {1,1,1,1,1,1,1};
-    private Weapon current = new Knife();
-    
+    private Attack attack;
     
     public Player(int x, int y)
     {
@@ -46,14 +47,9 @@ public class Player {
         yPos = y;
         attackType = 0;
         strength = 20;
-        for (int i = 0; i < 4; i++)
-        {
-            attack[i] = false;
-        }
         team = 1;
         totalXP = 100;
         leveled = false;
-        this.current = new Knife();
     }
     
     public double getClassTechnique(int i)
@@ -71,12 +67,7 @@ public class Player {
     {
         this.arrayPos = arrayPos;
     }
-    
-    public boolean[] getAllAttack()
-    {
-        return attack;
-    }
-
+   
     public void getHit(int damage)
     {
         health -= damage;
@@ -100,16 +91,9 @@ public class Player {
         attackType = type;
     }
 
-    public boolean getAttack(int direction)
+    public int getAttack(int direction)
     {
-        if (attack[direction])
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return dir;
     }
 
     public void setAttackingNow(boolean now)
@@ -122,18 +106,7 @@ public class Player {
         return attackingNow;
     }
 
-    public void setAttack(int direction, boolean isAttacking)
-    {
-        attack[direction] = isAttacking;
-    }
 
-    public void doneAttacking()
-    {
-        for (int i = 0; i < 4; i++)
-        {
-            attack[i] = false;
-        }
-    }
 
     public int getXpos()
     {
@@ -208,7 +181,7 @@ public class Player {
       
     public int getDamage()//int weapondType)
     {
-        return strength+current.getDamage() * technique[current.getType()]/100;//((int) this.technique[weapondType] + 1)  ;
+        return strength+arms.getDamage() * technique[arms.getType()]/100;//((int) this.technique[weapondType] + 1)  ;
     }
 
     public int getTeam()
@@ -216,9 +189,13 @@ public class Player {
         return team;
     }
     
-    public void attack(int type)
+    public void attack(int dir)
     {
-        
+        if (!arms.equals(attack.getArm()))
+        {
+            attack = new Attack(new File("\\" + arms.getName() + ".txt"), new File("\\" + arms.getName() + "D.txt"), arms);
+        }
+        attack.strike(dir, this);
     }
     
     public Weapon getArm()

@@ -11,7 +11,6 @@ public class Knife extends Weapon
     {
         super();
         name = "Knife";
-        
     }
 
 

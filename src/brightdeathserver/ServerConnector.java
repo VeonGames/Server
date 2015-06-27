@@ -84,15 +84,19 @@ public class ServerConnector
                 {
                     thePlayer.setLeveled(false);
                 }
-                int AttackType = readInt(inpt);
-                int temp = readInt(inpt);
-                thePlayer.setAttack(0, readBoolean(inpt));
-                thePlayer.setAttack(2, readBoolean(inpt));
-                thePlayer.setAttack(3, readBoolean(inpt));
-                thePlayer.setAttack(1, readBoolean(inpt));
-                thePlayer.attack(temp);
+                //attack
+                if (readBoolean(inpt))
+                {
+                   thePlayer.attack(readInt(inpt));
+                }
                 
-//                if (temp==8)
+//                thePlayer.setAttack(0, readBoolean(inpt));
+//                thePlayer.setAttack(2, readBoolean(inpt));
+//                thePlayer.setAttack(3, readBoolean(inpt));
+//                thePlayer.setAttack(1, readBoolean(inpt));
+//                thePlayer.attack(temp);
+//                
+//                if (dir==8)
 //                {
 //                    thePlayer.setAttack(0, false);
 //                    thePlayer.setAttack(1, false);
@@ -101,38 +105,38 @@ public class ServerConnector
 //                }
 //                else
 //                {
-//                    if (temp==0)
+//                    if (dir==0)
 //                    {
 //                        thePlayer.setAttack(0,true);
 //                    }
-//                    else if (temp==1)
+//                    else if (dir==1)
 //                    {
 //                        thePlayer.setAttack(0,true);
 //                        thePlayer.setAttack(1,true);
 //                    }
-//                    else if (temp==2)
+//                    else if (dir==2)
 //                    {
 //                        thePlayer.setAttack(1, true);
 //                    }
-//                    else if (temp==3)
+//                    else if (dir==3)
 //                    {
 //                        thePlayer.setAttack(1, true);
 //                        thePlayer.setAttack(2, true);
 //                    }
-//                    else if (temp==4)
+//                    else if (dir==4)
 //                    {
 //                        thePlayer.setAttack(2, true);
 //                    }
-//                    else if (temp==5)
+//                    else if (dir==5)
 //                    {
 //                        thePlayer.setAttack(2, true);
 //                        thePlayer.setAttack(3,true);
 //                    }
-//                    else if (temp==6)
+//                    else if (dir==6)
 //                    {
 //                        thePlayer.setAttack(3,true);
 //                    }
-//                    else if (temp==7)
+//                    else if (dir==7)
 //                    {
 //                        thePlayer.setAttack(3,true);
 //                        thePlayer.setAttack(0, true);
