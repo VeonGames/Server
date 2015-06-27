@@ -88,7 +88,7 @@ public class Attack
         //5 left down 
         //6 left
         //7 left up
-        //y,x
+        //x,y
         
         if (dia == null && !(dir == 0 || dir == 1 || dir == 2 || dir == 3))
         {
@@ -99,24 +99,24 @@ public class Attack
         int[] indexP = {4, 4};
         int px = player.getXpos();
         int py = player.getYpos();
-        int cy;
-        int cx;
+        int yPos;
+        int xPos;
         List<Monster> boxes;
-        if (dir == 1)
+        if (dir == 0)
         {
             for (int y = 0; y < 9; y ++)
             {
                 for (int x = 0; x < 9; x++)
-                {         //y  x
-                    cy = y;
-                    cx = x;
-                    if (map[cy][cx] == 'O') // flip
+                {         //x  y
+                    yPos = y;
+                    xPos = x;
+                    if (map[yPos][xPos] == 'O') // flip
                     {
-                        
+                        break;
                     }
-                    else if (map[cy][cx] == 'X')
+                    else if (map[yPos][xPos] == 'X')
                     {
-                        box.add(new AttackBox(px + ((cx - 4) * 50), py - ((cy - 4) * 50), player.getDamage(), player.getTeam(), dir, 4, 0));
+                        box.add(new AttackBox(px + ((xPos - 4) * 50), py - ((yPos - 4) * 50), player.getDamage(), player.getTeam(), dir, 1, 0));
                     }
 //                    else if (map[cy][cx] == '>')
 //                    {

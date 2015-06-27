@@ -6,7 +6,7 @@ package Items.Weapon;
 
 import Attacks.AttackBox;
 import Item.Item;
-import Item.Rune;
+import Items.Rune.Rune;
 
 /**
  *
@@ -18,12 +18,14 @@ public class Weapon extends Item
     protected int damage;
     protected int minLevel;
     protected Rune[] runes;
-    private AttackBox attack;
+    protected int timeX;
+    protected int damageX;
 
     public Weapon()
     {
         super(1);
         damage = 10;
+        timeX = 1;
         minLevel = 1;
         name = "Weapon";
         runes = new Rune[1];
@@ -44,10 +46,6 @@ public class Weapon extends Item
         return damage;
     }
 
-    public AttackBox getAttack()
-    {
-        return attack;
-    }
 
     public boolean addRune(Rune r)
     {
@@ -62,4 +60,9 @@ public class Weapon extends Item
         return false;
     }
 
+    public int getTimeX()
+    {
+        return timeX;
+    }
+    
 }

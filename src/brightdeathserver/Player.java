@@ -221,4 +221,8 @@ public class Player {
         
     }
     
+    public Weapon getArm()
+    {
+        return this.arms;
+    }
 }
