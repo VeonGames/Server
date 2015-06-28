@@ -35,8 +35,9 @@ public class Player {
     private Weapon arms;
     private int[] technique = {1,1,1,1,1,1,1};
     private Attack attack;
+    private String name;
     
-    public Player(int x, int y)
+    public Player(String name, int x, int y)
     {
         arms = new Knife();
         level = 1;
@@ -50,6 +51,7 @@ public class Player {
         team = 1;
         totalXP = 100;
         leveled = false;
+        this.name = name;
     }
     
     public double getClassTechnique(int i)
@@ -202,4 +204,10 @@ public class Player {
     {
         return this.arms;
     }
+
+    public String getName()
+    {
+        return name;
+    }
+    
 }

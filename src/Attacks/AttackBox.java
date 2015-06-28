@@ -12,8 +12,9 @@ public class AttackBox
     final int team;
     final int speed;
     final boolean splash;
+    final int type;
     
-    public AttackBox(int x, int y, int damage, int team, int direction, int maxIterations, int speed) //for range
+    public AttackBox(int x, int y, int damage, int team, int direction, int maxIterations, int speed, int type) //for range
     {
         xPos = x;
         yPos = y;
@@ -24,6 +25,12 @@ public class AttackBox
         this.direction = direction;
         this.team = team;
         splash = true;
+        this.type=type;
+    }
+    
+    public int getType()
+    {
+        return type;
     }
 
     public boolean isSplash()
